@@ -5,8 +5,8 @@ package fscoward
  */
 object Main {
   def main(args: Array[String]): Unit = {
-    ExTokenizer.tokenize("銀聯売上要求").foreach{token =>
-      println(token.getAllFeatures)
+    ExTokenizer.tokenize("銀聯売上").foreach{token =>
+      println(token.getSurfaceForm)
     }
   }
 }
