@@ -6,11 +6,14 @@ package fscoward
 
 import org.atilika.kuromoji.{Token, Tokenizer}
 import scala.collection.JavaConversions._
+import org.atilika.kuromoji.Tokenizer.Mode
 
 object ExTokenizer {
   
   def tokenize(text: String): Iterator[Token] = {
-    Tokenizer.builder().build().tokenize(text).iterator().toIterator
+    Tokenizer.builder()
+      .userDictionary(".\\src\\main\\resources\\userdict.txt")
+      .build().tokenize(text).iterator().toIterator
   }
   
   def translate(word: String) = {
